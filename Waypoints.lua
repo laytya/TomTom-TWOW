@@ -54,21 +54,22 @@ function TomTom:SetWaypoint(waypoint, callbacks, show_minimap, show_world)
         point = {}
 
         local minimap = CreateFrame("Button", nil, minimapParent)
-        minimap:SetHeight(20)
-        minimap:SetWidth(20)
+        local scale = MinimapCluster:GetScale()
+        minimap:SetHeight(20/scale)
+        minimap:SetWidth(20/scale)
         minimap:RegisterForClicks("RightButtonUp")
 
         -- Add to the "All points" table so we can reparent easily
         table.insert(all_points, minimap)
 
         minimap.icon = minimap:CreateTexture("BACKGROUND")
-        minimap.icon:SetTexture("Interface\\AddOns\\TomTom\\Images\\GoldGreenDot")
+        minimap.icon:SetTexture("Interface\\AddOns\\TomTom-TWOW\\Images\\GoldGreenDot")
         minimap.icon:SetPoint("CENTER", 0, 0)
-        minimap.icon:SetHeight(12)
-        minimap.icon:SetWidth(12)
+        minimap.icon:SetHeight(12/scale)
+        minimap.icon:SetWidth(12/scale)
 
         minimap.arrow = minimap:CreateTexture("BACKGROUND")
-        minimap.arrow:SetTexture("Interface\\AddOns\\TomTom\\Images\\MinimapArrow-Green")
+        minimap.arrow:SetTexture("Interface\\AddOns\\TomTom-TWOW\\Images\\MinimapArrow-Green")
         minimap.arrow:SetPoint("CENTER", 0 ,0)
         minimap.arrow:SetHeight(40)
         minimap.arrow:SetWidth(40)
@@ -95,7 +96,7 @@ function TomTom:SetWaypoint(waypoint, callbacks, show_minimap, show_world)
         worldmap:RegisterForClicks("RightButtonUp")
         worldmap.icon = worldmap:CreateTexture("ARTWORK")
         worldmap.icon:SetAllPoints()
-        worldmap.icon:SetTexture("Interface\\AddOns\\TomTom\\Images\\GoldGreenDot")
+        worldmap.icon:SetTexture("Interface\\AddOns\\TomTom-TWOW\\Images\\GoldGreenDot")
 
         worldmap:RegisterEvent("WORLD_MAP_UPDATE")
         worldmap:SetScript("OnEnter", World_OnEnter)

@@ -5,6 +5,7 @@
 --  with the artwork.)
 ----------------------------------------------------------------------------
 TomTom = {}
+local waterfall 		= AceLibrary("Waterfall-1.0")
 TomTom = AceLibrary("AceAddon-2.0"):new("AceEvent-2.0", "AceConsole-2.0", "AceDebug-2.0", "AceDB-2.0")
 
 local twopi = math.pi * 2
@@ -210,7 +211,7 @@ function TomTom:CreateFrames()
 	wayframe:RegisterEvent("ZONE_CHANGED_NEW_AREA")
 	wayframe:SetScript("OnEvent", self.OnEvent)
 	wayframe.arrow = wayframe:CreateTexture("OVERLAY")
-	wayframe.arrow:SetTexture("Interface\\AddOns\\TomTom\\Images\\Arrow")
+	wayframe.arrow:SetTexture("Interface\\AddOns\\TomTom-TWOW\\Images\\Arrow")
 	wayframe.arrow:SetAllPoints()
 
 	wayframe:SetScript("OnUpdate", self.OnUpdate)
@@ -371,7 +372,7 @@ function TomTom:OnUpdate()
 	local dist,x,y = TomTom:GetDistanceToIcon(TomTom.active_point)
 	-- The only time we cannot calculate the distance is when the waypoint
 	-- is on another continent, or we are in an instance
-	if not dist or IsInInstance() then
+	if not dist then --or IsInInstance() then
 		if not TomTom.active_point.x and not TomTom.active_point.y then
 			TomTom.active_point = nil
 		end
@@ -386,13 +387,13 @@ function TomTom:OnUpdate()
 	-- Showing the arrival arrow?
 	elseif dist <= TomTom.arrive_distance then
 	    if TomTom.profile.arrow.enablePing and TomTom.active_point.normalArrowShown and not TomTom.active_point.pinged then
-	        PlaySoundFile("Interface\\AddOns\\TomTom\\Media\\ping.mp3")
+	        PlaySoundFile("Interface\\AddOns\\TomTom-TWOW\\Media\\ping.mp3")
 	        TomTom.active_point.pinged = true
 	    end
 		if not self.showDownArrow then
 			self.arrow:SetHeight(70)
 			self.arrow:SetWidth(53)
-			self.arrow:SetTexture("Interface\\AddOns\\TomTom\\Images\\Arrow-UP")
+			self.arrow:SetTexture("Interface\\AddOns\\TomTom-TWOW\\Images\\Arrow-UP")
 			self.arrow:SetVertexColor(0, 1, 0)
 			self.showDownArrow = true
 		end
@@ -414,7 +415,7 @@ function TomTom:OnUpdate()
 		if self.showDownArrow then
 			self.arrow:SetHeight(56)
 			self.arrow:SetWidth(42)
-			self.arrow:SetTexture("Interface\\AddOns\\TomTom\\Images\\Arrow")
+			self.arrow:SetTexture("Interface\\AddOns\\TomTom-TWOW\\Images\\Arrow")
 			self.showDownArrow = false
 		end
 		local degtemp = TomTom:GetDirectionToIcon(TomTom.active_point);
@@ -1196,7 +1197,10 @@ function TomTom:DebugListWaypoints(zone)
 end
 
 function TomTom:InitConsole()
-	self:RegisterChatCommand({'/tomtom'}, self.options)
+	self:RegisterChatCommand({'/tomtom'}, function() waterfall:Open('TomTom') end)
+	self:RegisterChatCommand({'/ttcli'}, self.options)
+	waterfall:Register('TomTom', 'aceOptions', self.options, 'title', 'Tomtom options')  
+
 	TomTomWayHandler:Register(self)
 end
 

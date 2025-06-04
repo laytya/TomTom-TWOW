@@ -1,9 +1,9 @@
 ## Interface: 11200
-## Title: TomTom |cff7fff7f -Ace2-|r
+## Title: TomTom TWOW |cff7fff7f -Ace2-|r
 ## Author: cladhaire
-## Credits: Aero/Schaka/Logonz/Dyaxler/Alphaest/cralor
-## Notes: A standalone Vanilla TomTom
-## Version: 1.0
+## Credits: Aero/Schaka/Logonz/Dyaxler/Alphaest/cralor/laytya
+## Notes: A standalone TomTom for TWOW
+## Version: 1.01
 ## SavedVariables: TomTomDB
 
 # Astrolabe libs
@@ -24,6 +24,7 @@ Libs\Babble-Boss-2.2\Babble-Boss-2.2.lua
 Libs\Babble-Spell-2.2\Babble-Spell-2.2.lua
 Libs\Tablet-2.0\Tablet-2.0.lua
 Libs\Tourist-2.0\Tourist-2.0.lua
+Libs\Waterfall-1.0\Waterfall-1.0.lua
 
 Astrolabe\Astrolabe.lua
 TomTom.lua
