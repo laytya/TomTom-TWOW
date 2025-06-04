@@ -2,6 +2,12 @@
 
 *Cladhaire's TomTom AddOn backported for 1.12*
 
-[**Download Latest Version**](https://github.com/cralor/TomTomVanilla/releases/latest)
+Updated:
+
++ Fixed maps coordinates
++ Added new TWOW's maps
++ Working in instances
++ TWOW 1.17.2 compatible.
+
 
 Continuation of work from Alphaeast. https://forum.elysium-project.org/topic/29180-addon-tomtom/
