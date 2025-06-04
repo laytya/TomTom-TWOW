@@ -1,4 +1,4 @@
-# TomTomVanilla
+# TomTom for Turtle-WoW
 
 *Cladhaire's TomTom AddOn backported for 1.12*
 
