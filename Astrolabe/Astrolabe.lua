@@ -1147,8 +1147,8 @@ function initSizes()
 		[11] = {
 			zoneData = {
 				MoltenCore = {
-					height = 843.200074,
-					width = 1264.800064,
+					height = 983,
+					width = 1495,
 				},
 			},
 		},
@@ -1171,8 +1171,8 @@ function initSizes()
 		[14] = {
 			zoneData = {
 				BlackrockDepths = {
-					height = 938.0400550000001,
-					width = 1407.059998,
+					height = 1268,
+					width = 1985,
 				},
 			},
 		},
