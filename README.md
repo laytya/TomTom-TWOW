@@ -2,8 +2,12 @@
 
 *Cladhaire's TomTom AddOn backported for 1.12*
 
-## 04.06.2025
 ## Updated:
+## 28/08/2025
+
++ Updated to TWOW 1.18
+
+## 04.06.2025
 
 + Fixed maps coordinates
 + Added new TWOW's maps

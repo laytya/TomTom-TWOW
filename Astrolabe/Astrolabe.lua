@@ -53,7 +53,7 @@ local initSizes
 Astrolabe.LastPlayerPosition = {};
 Astrolabe.MinimapIcons = {};
 
-
+Astrolabe.ContinentNumbers = 42; -- TWoW 1.18
 Astrolabe.MinimapUpdateTime = 0.1;
 Astrolabe.UpdateTimer = 0;
 Astrolabe.ForceNextUpdate = false;
@@ -592,7 +592,7 @@ local function activate( self, oldLib, oldDeactivate )
 				zones[Z] = { mapFile = GetMapInfo(), mapName = N}
 			end
 		end
-		for C = 3, 40 do
+		for C = 3, Astrolabe.ContinentNumbers do
         local zones = { GetMapZones(C) };
 				self.ContinentList[C] = zones;
         for Z, N in ipairs(zones) do
@@ -747,10 +747,10 @@ function initSizes()
 					width = 3227,
 				},
 				StonetalonMountains = {
-					yOffset = 9883.233800947906,
-					height = 3256.249909,
-					xOffset = 13820.76862040341,
-					width = 4883.330078,
+					yOffset = 11833.020517518,
+					height = 4010,
+					xOffset = 16026.280055536,
+					width = 6018,
 				},
 				Darnassis = {
 					width = 1058.330078,
@@ -830,11 +830,11 @@ function initSizes()
 					xOffset = 20343.68127434695,
 					width = 5070.839844,
 				},
-				AmaniAlor = {
-					width = 1513,
-					xOffset = 13954.60081035236,
-					height = 1003,
-					yOffset = 9362.900076787424,
+				DireMaulEntrance = {
+				width = 1324,
+				xOffset = -766.01280164719,
+				height = 869,
+				yOffset = -422.96216252446,
 				},
 			},
 		},
@@ -1060,6 +1060,24 @@ function initSizes()
 					height = 3283.339844,
 					yOffset = 11343.67957693626,
 				},
+				Balor = {
+					width = 3098,
+					xOffset = 11271.998773806,
+					height = 2068,
+					yOffset = 15043.600602566,
+				},
+				GrimReaches = {
+					width = 5387,
+					xOffset = 18071.998763567,
+					height = 3584,
+					yOffset = 10370.600153409,
+				},
+				Northwind = {
+					width = 3241,
+					xOffset = 13741.999182531,
+					height = 2157,
+					yOffset = 13793.599739251,
+				},
 			},
 		},
 		[3] = {
@@ -1217,8 +1235,8 @@ function initSizes()
 		[22] = {
 			zoneData = {
 				RazorfenDowns = {
-					height = 472.699951,
-					width = 709.049926,
+					height = 589,
+					width = 881,
 				},
 			},
 		},
@@ -1395,6 +1413,22 @@ function initSizes()
 				UpperKarazhan2f = {
 					height = 1868,
 					width = 2800,
+				},
+			},
+		},
+		[41] = {
+			zoneData = {
+				DragonmawRetreat = {
+					height = 1073,
+					width = 1634,
+				},
+			},
+		},
+		[42] = {
+			zoneData = {
+				StormwroughtRuins = {
+					height = 1350,
+					width = 1980,
 				},
 			},
 		},
